@@ -1,1 +1,12 @@
-spring.application.name=zerei_games_usados_aws
+spring:
+  datasource:
+    url: jdbc:mariadb://AWS-DB-URI/aws_project01_db?createDatabaseIfNotExist=true
+    username: service01app
+    password: USAR_FRAMEWORK_SEGURO_VAULT
+  application:
+    name: zerei_games_usados_aws
+  jpa:
+    properties:
+      hibernate.dialect: "org.hibernate.dialect.MySQL8Dialect"
+    hibernate:
+      ddl-auto: update #config que vai permitir alterar o banco quando a aplicação mudar as entidades, recomendado usar frameworks como liquibase

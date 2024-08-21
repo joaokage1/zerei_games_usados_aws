@@ -1,0 +1,22 @@
+version: '3.5'
+services:
+  aws-project01-db:
+    image: mysql
+    container_name: aws-project01-db
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: 1234
+      MYSQL_DATABASE: aws_project01_db
+      MYSQL_USER: service01app
+      MYSQL_PASSWORD: 1234
+    volumes:
+      - "./createDatabase.sql:/docker-entrypoint-initdb.d/1.sql"
+
+  phpmyadmin:
+    image: phpmyadmin:latest
+    restart: always
+    ports:
+      - 8081:80
+    environment:
+      - PMA_ARBITRARY=1
