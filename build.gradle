@@ -6,7 +6,7 @@ plugins {
 }
 
 group = 'toddystz'
-version = '1.0.0'
+version = '1.1.0'
 
 java {
 	toolchain {
@@ -39,6 +39,9 @@ dependencies {
 	annotationProcessor 'org.mapstruct:mapstruct-processor:1.5.2.Final'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+	implementation group: 'com.amazonaws', name: 'aws-java-sdk-sns', version: '1.12.770'
+
 }
 
 tasks.register('unpack', Copy) {
