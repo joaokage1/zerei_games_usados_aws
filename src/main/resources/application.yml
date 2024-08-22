@@ -10,3 +10,9 @@ spring:
       hibernate.dialect: "org.hibernate.dialect.MySQL8Dialect"
     hibernate:
       ddl-auto: update #config que vai permitir alterar o banco quando a aplicação mudar as entidades, recomendado usar frameworks como liquibase
+
+aws:
+  region: us-east-1
+  sns:
+    stock:
+      topic: stock_changed_v1
