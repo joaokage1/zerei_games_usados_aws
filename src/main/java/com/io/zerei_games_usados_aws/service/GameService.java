@@ -4,6 +4,7 @@ import com.io.zerei_games_usados_aws.common.GameDTO;
 import com.io.zerei_games_usados_aws.common.GameStockEventType;
 import com.io.zerei_games_usados_aws.repository.mapper.GameRepositoryMapper;
 import com.io.zerei_games_usados_aws.repository.GameRepository;
+import com.io.zerei_games_usados_aws.service.publisher.IGameEventPublisher;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Sort;
@@ -27,7 +28,7 @@ public class GameService {
                 gameDTO.getTitle(), gameDTO.getCode(), gameDTO.getStock());
         gameRepository.save(gameRepositoryMapper.toGame(gameDTO));
 
-        eventPublisher.publishProductEvent(gameDTO, GameStockEventType.GAME_STOCK_CREATED, "SYSTEM");
+        eventPublisher.publishGameEvent(gameDTO, GameStockEventType.GAME_STOCK_CREATED, "SYSTEM");
     }
 
     public List<GameDTO> getGameByPlatform(String gamePlatform) {
@@ -60,7 +61,7 @@ public class GameService {
 
         gameRepository.deleteById(id);
 
-        eventPublisher.publishProductEvent(gameRepositoryMapper.toGameDTO(game), GameStockEventType.GAME_STOCK_DELETED, "SYSTEM");
+        eventPublisher.publishGameEvent(gameRepositoryMapper.toGameDTO(game), GameStockEventType.GAME_STOCK_DELETED, "SYSTEM");
     }
 
     public void updateGame(Long id, GameDTO gameDTO) {
@@ -75,6 +76,6 @@ public class GameService {
 
         gameRepository.save(newGameAttributes);
 
-        eventPublisher.publishProductEvent(gameRepositoryMapper.toGameDTO(game), GameStockEventType.GAME_STOCK_UPDATED, "SYSTEM");
+        eventPublisher.publishGameEvent(gameRepositoryMapper.toGameDTO(game), GameStockEventType.GAME_STOCK_UPDATED, "SYSTEM");
     }
 }

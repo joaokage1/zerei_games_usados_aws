@@ -12,6 +12,7 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @NoArgsConstructor
 public class GameDTO {
+    private Long id;
     private String title;
     private String description;
     private String developer;

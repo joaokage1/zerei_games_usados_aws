@@ -16,3 +16,8 @@ aws:
   sns:
     stock:
       topic: stock_changed_v1
+  sqs:
+    queue:
+      stock:
+        events:
+          name: stock_changed_queue_v1
