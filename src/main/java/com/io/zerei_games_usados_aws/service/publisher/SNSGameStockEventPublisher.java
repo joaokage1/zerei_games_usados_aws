@@ -1,4 +1,4 @@
-package com.io.zerei_games_usados_aws.service;
+package com.io.zerei_games_usados_aws.service.publisher;
 
 import com.amazonaws.services.sns.AmazonSNS;
 import com.amazonaws.services.sns.model.Topic;
@@ -16,7 +16,7 @@ import java.util.Objects;
 @Slf4j
 @Service
 @RequiredArgsConstructor
-public class GameEventPublisher implements IGameEventPublisher {
+public class SNSGameStockEventPublisher implements IGameEventPublisher {
 
     private final AmazonSNS snsClient;
     private final Topic gameStockChangedTopic;
@@ -24,7 +24,7 @@ public class GameEventPublisher implements IGameEventPublisher {
 
 
     @Override
-    public void publishProductEvent(GameDTO gameDTO, GameStockEventType eventType, String username) {
+    public void publishGameEvent(GameDTO gameDTO, GameStockEventType eventType, String username) {
 
         log.info("Starting SNS publishing for {}:{}, eventType {}", Objects.isNull(gameDTO.getTitle())? gameDTO.getCode(): gameDTO.getTitle(), gameDTO.getCode(), eventType);
         EventEnvelope envelope = new EventEnvelope();
