@@ -12,6 +12,7 @@ import org.springframework.context.annotation.Profile;
 import org.springframework.jms.annotation.EnableJms;
 import org.springframework.jms.config.DefaultJmsListenerContainerFactory;
 import org.springframework.jms.support.destination.DynamicDestinationResolver;
+
 @Configuration
 @EnableJms
 @Profile("!local")

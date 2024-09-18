@@ -1,4 +1,4 @@
-package com.io.zerei_games_usados_aws.repository;
+package com.io.zerei_games_usados_aws.repository.game;
 
 import com.io.zerei_games_usados_aws.model.Game;
 import org.springframework.data.domain.Sort;
