@@ -5,6 +5,7 @@ import lombok.experimental.UtilityClass;
 @UtilityClass
 public class ResourceUtils {
 
-    public static final String VERSION = "/v1";
+    public static final String VERSION_1 = "/v1";
     public static final String RESOURCE = "/api/games";
+    public static final String RESOURCE_STOCK_EVENT = "/api/adm/log";
 }

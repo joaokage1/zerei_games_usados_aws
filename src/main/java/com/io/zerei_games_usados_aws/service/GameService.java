@@ -3,7 +3,7 @@ package com.io.zerei_games_usados_aws.service;
 import com.io.zerei_games_usados_aws.common.GameDTO;
 import com.io.zerei_games_usados_aws.common.GameStockEventType;
 import com.io.zerei_games_usados_aws.repository.mapper.GameRepositoryMapper;
-import com.io.zerei_games_usados_aws.repository.GameRepository;
+import com.io.zerei_games_usados_aws.repository.game.GameRepository;
 import com.io.zerei_games_usados_aws.service.publisher.IGameEventPublisher;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
